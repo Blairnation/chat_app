@@ -1,0 +1,34 @@
+# Ignore Python cache and environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+env.bak/
+venv/
+venv.bak/
+
+# Ignore Django-specific files
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# Ignore Node modules
+node_modules/
+
+# Ignore logs and debug files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore Git files
+.git
+.gitignore
