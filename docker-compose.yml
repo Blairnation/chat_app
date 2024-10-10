@@ -1,16 +1,18 @@
-version: '3'
+# version: '3.8'
 
 services:
   backend:
     build:
-      context: .
+      context: .  
       dockerfile: ./backend/Dockerfile
     volumes:
-      - ./base:/app
+      - ./backend:/app  
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+
+    # depends_on:
+    #   - db
+  
   frontend:
     build:
       context: ./frontend
@@ -19,14 +21,17 @@ services:
       - ./frontend:/app
     ports:
       - "3000:3000"
-#   db:
-#     image: postgres:13
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     environment:
-#       POSTGRES_DB: mydb
-#       POSTGRES_USER: myuser
-#       POSTGRES_PASSWORD: mypassword
+
+
+# db:
+#   image: postgres:13
+#   volumes:
+#     - postgres_data:/var/lib/postgresql/data
+#   environment:
+#     POSTGRES_DB: mydb
+#     POSTGRES_USER: myuser
+#     POSTGRES_PASSWORD: mypassword
+
 
 # volumes:
 #   postgres_data:
