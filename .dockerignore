@@ -15,8 +15,8 @@ venv.bak/
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-media/
+# db.sqlite3
+# media/
 
 # Ignore Node modules
 node_modules/
@@ -32,3 +32,5 @@ yarn-error.log
 # Ignore Git files
 .git
 .gitignore
+
+build/
