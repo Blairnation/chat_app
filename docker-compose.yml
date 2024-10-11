@@ -3,10 +3,10 @@
 services:
   backend:
     build:
-      context: .  
-      dockerfile: ./backend/Dockerfile
+      context: ./base  
+      dockerfile: ./Dockerfile
     volumes:
-      - ./backend:/app  
+      - ./base:/app  
     ports:
       - "8000:8000"
 
