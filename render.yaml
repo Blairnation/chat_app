@@ -1,5 +1,5 @@
 services:
-  backend:
+  - name: blairn-chat-backend
     type: docker
     env: docker
     dockerfilePath: ./base/Dockerfile
@@ -9,7 +9,7 @@ services:
     plan: free
     region: oregon
     
-  frontend:
+  - name: blairn-chat-frontend
     type: docker
     env: docker
     dockerfilePath: ./frontend/Dockerfile
