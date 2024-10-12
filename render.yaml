@@ -17,4 +17,26 @@ services:
     buildCommand: docker build -t chat_app_pro-frontend ./frontend
     startCommand: serve -s build -l 3000
     plan: free
+    region: oregonservices:
+  - name: blairn-chat-backend
+    type: docker
+    env: docker
+    dockerfilePath: ./base/Dockerfile
+    autoDeploy: true
+    # Remove the buildCommand; Render builds automatically based on the Dockerfile
+    # buildCommand: docker build -t chat_app_pro-backend ./base
+    startCommand: gunicorn base.wsgi:application --bind 0.0.0.0:8000
+    plan: free
     region: oregon
+    
+  - name: blairn-chat-frontend
+    type: docker
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    autoDeploy: true
+    # Remove the buildCommand; Render builds automatically based on the Dockerfile
+    # buildCommand: docker build -t chat_app_pro-frontend ./frontend
+    startCommand: serve -s build -l 3000  # Ensure you have a way to serve your frontend
+    plan: free
+    region: oregon
+
