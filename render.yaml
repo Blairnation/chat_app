@@ -4,7 +4,7 @@ services:
     env: docker
     dockerfilePath: ./base/Dockerfile
     autoDeploy: true
-    startCommand: gunicorn base.base.wsgi:application --bind 0.0.0.0:${PORT:-8000}
+    startCommand: gunicorn base.wsgi:application --bind 0.0.0.0:${PORT:-8000}
     plan: free
     region: oregon
     
